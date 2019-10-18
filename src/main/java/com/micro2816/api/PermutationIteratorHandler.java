@@ -27,8 +27,10 @@
 
 package com.micro2816.api;
 
+import com.micro2816.action.PermutationIteratorBean;
+
 /**
- * @see 
+ * @see the handler interface will be call while permutation iterates
  * @author Micro
  * @since 2019年10月18日 下午4:17:41
  * @version V1.0
@@ -36,5 +38,6 @@ package com.micro2816.api;
  *
  */
 public interface PermutationIteratorHandler {
-    void handle(char []letters);
+    
+    void handle(PermutationIteratorBean bean, char []letters);
 }

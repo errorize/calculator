@@ -59,7 +59,7 @@ import com.micro2816.common.ValidationResult;
 public class PermutationAction {
     public static final Pattern DIGIT_PATTERN = Pattern.compile("[0-9]+");
     private Map<Integer, char[]> digitsLettersMap;
-    private int from, to;
+    private int from, to, limitNumber = 603979768;
 	/**
 	 * @see 
 	 * @author Micro
@@ -108,7 +108,7 @@ public class PermutationAction {
 			char []charArray = charList.get(idx);
 			for(int i = 0; i < charArray.length; ++i) {
 				chArray[idx] = charArray[i];
-				bean.handler.handle(chArray);
+				bean.handler.handle(bean, chArray);
 			}
 		}
 		else if (idx < less) {
@@ -128,10 +128,11 @@ public class PermutationAction {
 	 * @throws Exception
 	 * @return Map<Integer,char[]>
 	 */
-	public Map<Integer, char[]> loadSystemProperties() throws Exception {
-	    String userDir = System.getProperty("user.dir");
-        
-        String filePath = userDir + File.separator + "system.properties";
+	public Map<Integer, char[]> loadSystemProperties(String filePath) throws Exception {
+	    if (StringUtils.isBlank(filePath)) {
+    	    String userDir = System.getProperty("user.dir");
+            filePath = userDir + File.separator + "system.properties";
+	    }
         Properties props = new Properties();
         InputStream in = null;
         try {
@@ -143,6 +144,11 @@ public class PermutationAction {
             if (!toStr.matches("[0-9]+")) { toStr = "9"; }
             from = Integer.parseInt(fromStr);
             to = Integer.parseInt(toStr);
+            
+            String limitNumberStr = props.getProperty("limitNumber", "603979768");
+            if (!limitNumberStr.matches("[0-9]+")) { limitNumberStr = "603979768"; }
+            limitNumber = Integer.parseInt(limitNumberStr);
+            
             Map<Integer, char[]> returnMap = new HashMap<Integer, char[]>(to - from + 1);
             for (int i = from, j; i <= to; ++i) {
                 String str = props.getProperty(String.valueOf(i));
@@ -174,7 +180,19 @@ public class PermutationAction {
 	public Map<Integer, char[]> getDigitsLettersMap() {
 	    return this.digitsLettersMap;
 	}
+	
+	public int getLimitNumber() {
+	    return limitNumber;
+	}
 
+	/**
+	 * @see validate whether the text is ok.
+	 * @author Micro
+	 * @since 2019年10月19日 上午7:37:23
+	 * @param text
+	 * @return
+	 * @return ValidationResult
+	 */
     public ValidationResult validate(String text) {
         ValidationResult result = new ValidationResult();
         result.setStatus(true);
@@ -197,7 +215,7 @@ public class PermutationAction {
             if (temp > to || temp < from) {
                 result.setStatus(false);
                 result.setMessage("input message contains number " + numStr 
-                        + " is incorrect. the integers must vary from " + from + " to " + to);
+                        + " which is incorrect. the integers must vary from " + from + " to " + to);
                 return result;
             }
             intList.add(temp);
@@ -210,4 +228,5 @@ public class PermutationAction {
         result.setData(intArray);
         return result;
     }
+    
 }

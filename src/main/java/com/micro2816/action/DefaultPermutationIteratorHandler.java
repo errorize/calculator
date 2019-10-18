@@ -42,7 +42,7 @@ import com.micro2816.api.PermutationIteratorHandler;
 public class DefaultPermutationIteratorHandler implements PermutationIteratorHandler {
     private static final Logger logger = Logger.getLogger(DefaultPermutationIteratorHandler.class);
     @Override
-    public void handle(char []letters) {
+    public void handle(PermutationIteratorBean bean, char []letters) {
 //        System.err.print(new String(letters) + " ");
         logger.info(new String(letters));
     }

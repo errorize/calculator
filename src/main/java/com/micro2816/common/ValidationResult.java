@@ -28,7 +28,7 @@
 package com.micro2816.common;
 
 /**
- * @see 
+ * @see VO or bean.
  * @author Micro
  * @since 2019年10月18日 下午4:17:41
  * @version V1.0
@@ -36,10 +36,17 @@ package com.micro2816.common;
  *
  */
 public class ValidationResult {
+    // Variable status indicate success or failure while true means success
+    // and false means failure.
     private boolean status;
+    
+    // Give the description of status.
     private String message;
+    
+    // store the return data.
     private Object data;
     
+    /////////////  Getter and setter
     public boolean isStatus() {
         return status;
     }

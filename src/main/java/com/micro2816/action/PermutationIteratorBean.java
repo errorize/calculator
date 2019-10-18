@@ -30,17 +30,29 @@ package com.micro2816.action;
 import java.util.Map;
 
 import com.micro2816.api.PermutationIteratorHandler;
+import com.micro2816.frame.MainFrame;
 
 /**
- * @see 
+ * @see Bean. Pass parameter.
  * @author Micro
  * @since 2019年10月18日 上午10:00:21
  * @version V1.0
- * @copyright 广州明动软件股份有限公司 Copyright (c) 2019
+ * @copyright Micro2816 Corporation Limited Copyright (c) 2019
  *
  */
 public class PermutationIteratorBean {
+    // integers array
     public int []intArray;
+    
+    // the mapping between digits and letters
     public Map<Integer, char[]> digitMap;
+    
+    // self-defined handler
     public PermutationIteratorHandler handler;
+    
+    // window UI
+    public MainFrame mainFrame;
+    
+    // limit number
+    public int limitNumber;
 }
