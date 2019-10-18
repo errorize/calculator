@@ -1,8 +1,10 @@
 /*
+ * JDK's License:
  * Copyright (c) 1994, 2013, Oracle and/or its affiliates. All rights reserved.
  * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  *
- *
+ * The program's License:
+ * Since the program obeys to Apache License. Please see more details about Apache License.
  *
  *
  *

@@ -1,3 +1,30 @@
+/*
+ * JDK's License:
+ * Copyright (c) 1994, 2013, Oracle and/or its affiliates. All rights reserved.
+ * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ *
+ * The program's License:
+ * Since the program obeys to Apache License. Please see more details about Apache License.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 package com.micro2816.action;
 
 import org.apache.log4j.Logger;
@@ -9,7 +36,7 @@ import com.micro2816.api.PermutationIteratorHandler;
  * @author Micro
  * @since 2019年10月18日 上午10:00:30
  * @version V1.0
- * @copyright 
+ * @copyright Micro2816 Corporation Limited Copyright (c) 2019
  *
  */
 public class DefaultPermutationIteratorHandler implements PermutationIteratorHandler {
