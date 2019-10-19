@@ -98,6 +98,11 @@ public class MyPermutationIteratorHandler implements PermutationIteratorHandler 
                 JOptionPane.showMessageDialog(bean.mainFrame, "system automatically finds that too many items will be output.\r\nso system will persist data into disk!\r\nAfter tip dialog disappears, choose preferred directory please.", "warning tip!", 0);
                 bean.mainFrame.getJFileChooser().showDialog(bean.mainFrame, "Choose preferred directory"); 
                 File fileDir = bean.mainFrame.getJFileChooser().getSelectedFile();
+                if (fileDir == null || (!fileDir.exists())) {
+                    String msg = "no directory is chosen.";
+                    bean.mainFrame.appendMessage(msg);
+                    throw new IllegalArgumentException(msg);
+                }
                 fileDirectory = fileDir.getAbsolutePath();
             }
             
@@ -154,7 +159,6 @@ public class MyPermutationIteratorHandler implements PermutationIteratorHandler 
         t = factor * idx - 1;
         while (t < result.length()) {
             result.setCharAt(t, '\n');
-//            ++idx;
             t += factor;
         }
         return result.toString();

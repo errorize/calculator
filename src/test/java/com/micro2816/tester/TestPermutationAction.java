@@ -33,8 +33,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.regex.Matcher;
@@ -152,7 +150,7 @@ public class TestPermutationAction {
         String str = "21d 3";
         System.err.println(str.matches("[ 0-9]+"));
         Matcher matcher = PermutationAction.DIGIT_PATTERN.matcher(str);
-        List<Integer> intList = new LinkedList<Integer>();
+//        List<Integer> intList = new LinkedList<Integer>();
         System.err.println(matcher.groupCount());
         str = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         System.err.println(str.length());

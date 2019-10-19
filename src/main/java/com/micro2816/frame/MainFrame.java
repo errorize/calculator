@@ -329,4 +329,18 @@ public class MainFrame extends JFrame {
             IOUtils.close(in);
         }
     }
+
+    /**
+     * @see append message to JTextArea
+     * @author Micro
+     * @since 2019年10月19日 上午8:03:55
+     * @param msg
+     * @return void
+     */
+    public void appendMessage(String msg) {
+        if (msg == null || msg.length() == 0) { msg = "blank information!"; }
+        this.ta_log.append(separatedLine);
+        this.ta_log.append(msg);
+        this.ta_log.append("\r\n");
+    }
 }
