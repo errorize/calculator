@@ -114,6 +114,7 @@ public class MainFrame extends JFrame {
         Map<String, String> argsMap = CommandUtils.parseArguments(args);
 //        System.err.println(JSON.toJSONString(argsMap));
         String uiStr = argsMap.get("--ui");
+        System.out.println("我是master......");
         if (uiStr == null || "0".equalsIgnoreCase(uiStr)) {
             CommandPermutationIteratorHandler handler = CommandPermutationIteratorHandler.getInstance();
             String systemProperties = argsMap.get("--systemProperties");
