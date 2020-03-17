@@ -110,7 +110,7 @@ public class MainFrame extends JFrame {
      * Launch the application.
      */
     public static void main(String[] args) {
-        System.err.println("我是developing。。。。。");
+        System.err.println("我是developing。。。。。故意和master搞冲突");
         Map<String, String> argsMap = CommandUtils.parseArguments(args);
 //        System.err.println(JSON.toJSONString(argsMap));
         String uiStr = argsMap.get("--ui");
